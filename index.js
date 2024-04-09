@@ -17,9 +17,9 @@ for (i=c+1;i<100;i++){
 document.getElementById("atten").innerHTML=at
 at="classes : percent"
 for (i=c-1;i>0;i--){
-    y=((p*100)/(i-1))-t
+    y=(t-((p*100)/(i-1)))
     console.log(y)
-    at=at+"<br>"+Math.ceil(y).toString()+" : "+i.toString()+"%"
+    at=at+"<br>"+Math.abs(Math.ceil(y)).toString()+" : "+i.toString()+"%"
     
     
 }
