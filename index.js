@@ -4,12 +4,10 @@ function check(){
     t=parseInt(document.getElementById("total").value);
     n=75
     
-c=parseInt((p/t)*100)
-x=(n*t-100*p)/(100-n)
+c=Math.ceil((p/t)*100)
 console.log("current attendance:"+c)
-console.log("classes needed for 75%:"+x)
 at="percent : classes"
-for (i=c+2;i<100;i++){
+for (i=c+1;i<100;i++){
     x=(i*t-100*p)/(100-i)
     console.log(x)
     at=at+"<br>"+i.toString()+"% : "+Math.ceil(x).toString()
@@ -26,4 +24,6 @@ for (i=c-1;i>0;i--){
     
 }
 document.getElementById("bunk").innerHTML=at
+document.getElementById("current").innerHTML=c+"%"
+
 }
